@@ -3,156 +3,154 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Стоматология</title>
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', sans-serif; color: #1a2b4a; line-height: 1.6; }
-  header {
-    position: fixed; top: 0; width: 100%; z-index: 100;
-    background: rgba(255,255,255,0.95); backdrop-filter: blur(10px);
-    padding: 18px 6%; display: flex; justify-content: space-between; align-items: center;
-    box-shadow: 0 2px 20px rgba(0,0,0,0.06);
-  }
-  .logo { font-size: 22px; font-weight: 800; }
-  .logo span { color: #00a8b5; }
-  nav a { color: #1a2b4a; margin-left: 28px; text-decoration: none; }
-  .hero {
-    min-height: 100vh; display: flex; align-items: center;
-    padding: 140px 6% 80px; background: linear-gradient(135deg, #f0fbff, #fff);
-  }
-  .hero h1 { font-size: clamp(32px, 5vw, 54px); margin-bottom: 24px; line-height: 1.15; }
-  .hero h1 span { color: #00a8b5; }
-  .hero p { font-size: 18px; color: #5a6b7f; margin-bottom: 36px; max-width: 600px; }
-  .btn {
-    display: inline-block; padding: 16px 36px; border-radius: 50px;
-    font-weight: 700; background: linear-gradient(135deg, #00a8b5, #007d8a);
-    color: #fff; text-decoration: none; cursor: pointer; border: none; font-size: 15px;
-  }
-  section { padding: 90px 6%; }
-  .section-title { text-align: center; margin-bottom: 60px; }
-  .section-title h2 { font-size: clamp(28px, 4vw, 40px); margin-bottom: 12px; }
-  .section-title p { color: #7a8a9f; }
-  .services-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;
-  }
-  .service-card {
-    background: #fff; padding: 36px 28px; border-radius: 20px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.05); border: 1px solid #eef4f8;
-  }
-  .service-card h3 { font-size: 19px; margin-bottom: 12px; }
-  .service-card p { color: #7a8a9f; font-size: 14px; margin-bottom: 16px; }
-  .service-price { color: #00a8b5; font-weight: 800; font-size: 20px; }
+<title>DENTAL PRO — Стоматология премиум-класса</title>
 
-  /* Кнопка админки — видна только владельцу */
-  .admin-btn {
-    position: fixed; bottom: 24px; right: 24px; z-index: 999;
-    background: #1a2b4a; color: #fff; border: none;
-    padding: 14px 22px; border-radius: 50px; cursor: pointer;
-    font-weight: 600; box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    display: none;
-  }
-  .admin-btn.visible { display: block; }
-</style>
+<!-- Стили -->
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<header>
-  <div class="logo" id="site-logo">DENTAL<span>PRO</span></div>
+<!-- ===== HEADER ===== -->
+<header id="header">
+  <div class="logo-wrap">
+    <img id="siteLogoImg" class="logo-img" src="" alt="" style="display:none;">
+    <div class="logo" id="site-logo">DENTAL<span>PRO</span></div>
+  </div>
   <nav>
     <a href="#services">Услуги</a>
-    <a href="#contact">Контакты</a>
+    <a href="#gallery">Работы</a>
+    <a href="#doctors">Врачи</a>
+    <a href="#reviews">Отзывы</a>
   </nav>
+  <a href="tel:+74951234567" class="header-phone" id="headerPhone">+7 (495) 123-45-67</a>
 </header>
 
-<section class="hero">
-  <div>
-    <h1 id="hero-title">Стоматология, которой доверяют</h1>
-    <p id="hero-subtitle">Лечим без боли и страха. Современное оборудование и опытные врачи.</p>
-    <a href="#contact" class="btn" id="hero-btn">Записаться на приём</a>
+<!-- ===== HERO ===== -->
+<section class="hero" id="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge" id="hero-badge">⭐ Премиум-клиника в центре Москвы</div>
+    <h1 id="hero-title">Стоматология, которой <span>доверяют</span> семьи</h1>
+    <p id="hero-subtitle">Лечим без боли, страха и переплат. Современное оборудование, опытные врачи и гарантия на все работы.</p>
+    <div class="hero-buttons">
+      <a href="#contact" class="btn btn-primary" id="hero-btn">Записаться на приём</a>
+      <a href="#services" class="btn btn-outline">Наши услуги</a>
+    </div>
+    <div class="hero-stats" id="hero-stats"></div>
   </div>
 </section>
 
-<section id="services">
-  <div class="section-title">
+<!-- ===== SERVICES ===== -->
+<section class="services" id="services">
+  <div class="section-title reveal">
     <h2 id="services-title">Наши услуги</h2>
     <p id="services-subtitle">Полный спектр стоматологической помощи</p>
   </div>
   <div class="services-grid" id="services-container"></div>
 </section>
 
-<section id="contact">
-  <div class="section-title">
-    <h2 id="contacts-title">Контакты</h2>
-    <p id="contacts-subtitle">Свяжитесь с нами удобным способом</p>
+<!-- ===== GALLERY ===== -->
+<section class="gallery" id="gallery">
+  <div class="section-title reveal">
+    <h2 id="gallery-title">Наши работы</h2>
+    <p id="gallery-subtitle">Реальные результаты лечения наших пациентов</p>
   </div>
-  <div style="text-align:center; font-size: 18px;">
-    <p id="contact-phone">📞 +7 (495) 123-45-67</p>
-    <p id="contact-address">📍 г. Москва, ул. Примерная, 15</p>
-  </div>
+  <div class="gallery-grid" id="gallery-container"></div>
 </section>
 
-<!-- Кнопка входа в админку (скрыта, появляется при вводе #admin в URL) -->
+<!-- ===== ADVANTAGES ===== -->
+<section>
+  <div class="section-title reveal">
+    <h2 id="advantages-title">Почему выбирают нас</h2>
+    <p id="advantages-subtitle">Мы делаем стоматологию комфортной</p>
+  </div>
+  <div class="advantages-grid" id="advantages-container"></div>
+</section>
+
+<!-- ===== DOCTORS ===== -->
+<section class="doctors" id="doctors">
+  <div class="section-title reveal">
+    <h2 id="doctors-title">Наши врачи</h2>
+    <p id="doctors-subtitle">Специалисты с опытом от 10 лет</p>
+  </div>
+  <div class="doctors-grid" id="doctors-container"></div>
+</section>
+
+<!-- ===== REVIEWS ===== -->
+<section class="reviews" id="reviews">
+  <div class="section-title reveal">
+    <h2 id="reviews-title">Отзывы пациентов</h2>
+    <p id="reviews-subtitle">Более 12 000 счастливых улыбок</p>
+  </div>
+  <div class="reviews-grid" id="reviews-container"></div>
+</section>
+
+<!-- ===== CTA ===== -->
+<div class="cta-wrap" id="contact">
+  <div class="cta">
+    <h2 id="cta-title">Запишитесь на бесплатную консультацию</h2>
+    <p id="cta-subtitle">Осмотр, план лечения и расчёт стоимости — бесплатно</p>
+    <div class="form-block">
+      <input type="text" placeholder="Ваше имя">
+      <input type="tel" placeholder="Телефон">
+      <select>
+        <option>Выберите услугу</option>
+        <option>Лечение зубов</option>
+        <option>Имплантация</option>
+        <option>Виниры</option>
+        <option>Чистка</option>
+      </select>
+      <button class="btn btn-primary" id="cta-btn">Записаться</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4 id="footer-name">DENTAL PRO</h4>
+      <p id="footer-desc">Стоматология премиум-класса для всей семьи. Работаем с 2010 года.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Услуги</h4>
+      <a href="#services">Лечение зубов</a>
+      <a href="#services">Имплантация</a>
+      <a href="#services">Виниры</a>
+      <a href="#services">Чистка</a>
+    </div>
+    <div class="footer-col">
+      <h4>Контакты</h4>
+      <p id="footer-address">г. Москва, ул. Примерная, 15</p>
+      <p id="footer-phone">+7 (495) 123-45-67</p>
+      <p id="footer-email">info@dentalpro.ru</p>
+    </div>
+    <div class="footer-col">
+      <h4>Режим работы</h4>
+      <p id="footer-hours">Пн–Пт: 9:00 — 21:00<br>Сб–Вс: 10:00 — 18:00</p>
+    </div>
+  </div>
+  <div class="footer-bottom" id="footer-copy">© 2026 DENTAL PRO. Все права защищены.</div>
+</footer>
+
+<!-- Секретная кнопка входа в админку (появится, если в URL добавить #admin) -->
 <button class="admin-btn" id="adminBtn" onclick="location.href='admin.html'">⚙️ Админ-панель</button>
 
+<!-- ===== СКРИПТЫ ===== -->
+<!-- Пока только 2 файла. Firebase и site.js подключим на следующем шаге. -->
+
 <script>
-// ЗАГРУЗКА КОНТЕНТА ИЗ "БАЗЫ" (localStorage для демо, в реале — API)
-const DEFAULT_CONTENT = {
-  logo: 'DENTAL<span>PRO</span>',
-  heroTitle: 'Стоматология, которой доверяют',
-  heroSubtitle: 'Лечим без боли и страха. Современное оборудование и опытные врачи.',
-  heroBtn: 'Записаться на приём',
-  servicesTitle: 'Наши услуги',
-  servicesSubtitle: 'Полный спектр стоматологической помощи',
-  contactsTitle: 'Контакты',
-  contactsSubtitle: 'Свяжитесь с нами удобным способом',
-  contactPhone: '+7 (495) 123-45-67',
-  contactAddress: 'г. Москва, ул. Примерная, 15',
-  services: [
-    { icon: '🦷', title: 'Лечение зубов', desc: 'Безболезненное лечение кариеса', price: 'от 2 500 ₽' },
-    { icon: '✨', title: 'Чистка', desc: 'Ультразвук + Air Flow', price: 'от 4 000 ₽' },
-    { icon: '🔧', title: 'Имплантация', desc: 'Импланты с гарантией', price: 'от 35 000 ₽' },
-    { icon: '💎', title: 'Виниры', desc: 'Голливудская улыбка', price: 'от 25 000 ₽' }
-  ]
-};
+  // Временная заглушка — покажем секретную кнопку админки при #admin в URL
+  function checkHash() {
+    document.getElementById('adminBtn').classList.toggle('visible', location.hash === '#admin');
+  }
+  checkHash();
+  window.addEventListener('hashchange', checkHash);
 
-function loadContent() {
-  const saved = localStorage.getItem('site_content');
-  return saved ? JSON.parse(saved) : DEFAULT_CONTENT;
-}
-
-function render() {
-  const c = loadContent();
-  document.getElementById('site-logo').innerHTML = c.logo;
-  document.getElementById('hero-title').textContent = c.heroTitle;
-  document.getElementById('hero-subtitle').textContent = c.heroSubtitle;
-  document.getElementById('hero-btn').textContent = c.heroBtn;
-  document.getElementById('services-title').textContent = c.servicesTitle;
-  document.getElementById('services-subtitle').textContent = c.servicesSubtitle;
-  document.getElementById('contacts-title').textContent = c.contactsTitle;
-  document.getElementById('contacts-subtitle').textContent = c.contactsSubtitle;
-  document.getElementById('contact-phone').textContent = '📞 ' + c.contactPhone;
-  document.getElementById('contact-address').textContent = '📍 ' + c.contactAddress;
-
-  const container = document.getElementById('services-container');
-  container.innerHTML = c.services.map(s => `
-    <div class="service-card">
-      <div style="font-size:32px; margin-bottom:16px;">${s.icon}</div>
-      <h3>${s.title}</h3>
-      <p>${s.desc}</p>
-      <div class="service-price">${s.price}</div>
-    </div>
-  `).join('');
-}
-
-render();
-
-// Секретный вход в админку: набрать #admin в URL
-if (location.hash === '#admin') {
-  document.getElementById('adminBtn').classList.add('visible');
-}
-window.addEventListener('hashchange', () => {
-  if (location.hash === '#admin') document.getElementById('adminBtn').classList.add('visible');
-});
+  // Header при скролле
+  window.addEventListener('scroll', () => {
+    document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
+  });
 </script>
 
 </body>
